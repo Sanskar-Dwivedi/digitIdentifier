@@ -5,6 +5,8 @@ from tkinter import messagebox
 
 root = tk.Tk()
 root.withdraw()
+icon = tk.PhotoImage(file="amongus_pixelated.png")
+root.iconphoto(True, icon)
 
 imagePath=r"digit.png"
 img=Image.open(imagePath).convert('L')
@@ -42,7 +44,8 @@ def predict_image(Img):
 
     messagebox.showinfo(
         "Digit Prediction",
-        f"Prediction: {prediction}\nConfidence: {confidence:.2%}"
+        f"Prediction: {prediction}\nConfidence: {confidence:.2%}",
+        parent=root
     )
     
 while True:
